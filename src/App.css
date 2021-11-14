@@ -1,38 +1,122 @@
-.App {
+html, body{
+height: 100%;
+margin: 0;
+}
+
+#root{
+  height: 100%;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  height: 100%;
+}
+
+.header{
+  grid-column: col-start /span 12;
+  background-color: #282A35;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+}
+
+.nav-menu-right{
+  float: right;
+}
+
+.side-nav{
+  grid-column: col-start 1 /span 2;
+  background-color: #E7E9EB;
+  height: 100%;
+  margin-top: 50px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.main-content{
+  grid-column: col-start 3 /span 10;
+  background-color: white;
+  height: 100%;
+  margin-top: 50px;
+}
+
+.footer{
+  grid-column: col-start 1 /span 3;
+  grid-row: 3;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 15px 15px;
+  background-color: #282A35;
+  width: 100%;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header a{
+  float: left;
+  color: white;
+  padding: 15px 15px;
+  font-size: 20px;
+  list-style-type: none;
+  font-weight: 600;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header a:active{
+  background-color: green;
+}
+
+.header a:hover{
+  background-color: gray;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 25px;
+  text-align: center;
+  font-family: arial;
+  float: left;
+  max-width: 300px;
+  min-height: 500px;
+  position: relative;
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+img {
+  border-radius: 5px 5px 0 0;
+  height: 150px;
+  width: 150px;
+}
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  position: absolute;
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  bottom: 0;
+  right: 0;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+input[type=text], select{
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 12px 20px;
 }
